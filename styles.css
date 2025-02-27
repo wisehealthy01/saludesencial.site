@@ -1,0 +1,227 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Previne rolagem horizontal */
+}
+
+/* Header */
+main {
+    margin: 60px auto 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Permite que o main cresça e empurre o footer para baixo */
+}
+
+.main-header {
+    background-color: #0b0a0a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10; 
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    text-align: center;
+    max-width: 800px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Seções */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 1;
+}
+
+.play-pause-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.play-pause-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.play-pause-button:active {
+    transform: scale(0.95);
+}
+
+.play-icon, .pause-icon {
+    position: absolute;
+}
+
+.play-icon {
+    display: none;
+}
+
+.pause-icon {
+    display: block;
+}
+
+.play-pause-button.playing .pause-icon {
+    display: block;
+}
+
+.play-pause-button.playing .play-icon {
+    display: none;
+}
+
+.play-pause-button:not(.playing) .play-icon {
+    display: block;
+}
+
+.play-pause-button:not(.playing) .pause-icon {
+    display: none;
+}
+
+.video-container iframe {
+    max-width: 640px;
+    max-height: 360px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Empurra o footer para a parte inferior */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;          /* Alterado de grid para flex */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    gap: 2rem;
+}
+
+.footer-image {
+    max-width: 150px;      /* Ajusta o tamanho máximo da imagem */
+    height: auto;
+}
+
+.footer-disclaimer {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.footer-disclaimer p {
+    margin: 0.3rem 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .video-container {
+        width: 95%; /* Um pouco mais largo em telas pequenas */
+    }
+    
+    .video-container iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
