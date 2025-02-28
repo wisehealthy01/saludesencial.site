@@ -12,8 +12,8 @@
     <header class="main-header">
         <nav>
             <div class="logo">
-                Debido a la gran demanda, garantizamos presentación solo hasta:
-                <span id="future-date"></span>
+                <span><b>Debido a la gran demanda, garantizamos presentación solo hasta:</b></span>
+                <span id="future-date" style="color: red; font-weight: bold;"></span>
                 <script>
                     function getNextMonday() {
                         const today = new Date();
@@ -29,19 +29,29 @@
     </header>
 
     <main>
+        <div class="message-image">
+            <img src="" alt="doctor" class="doctor-message-image" width="540px" id="random-message-image">
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const randomNum = Math.floor(Math.random() * 2) + 1;
+                    const imagePath = `assets/message-image${randomNum}.png`;
+                    document.getElementById('random-message-image').src = imagePath;
+                });
+            </script>
+        </div>
+
         <div class="video-container">
             <div style="pointer-events: none;"></div>
-            <script type="text/javascript"
-                id="scr_67be5cf926f95807b93b8686"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/bf333ee3-159f-46c5-83ac-bddb1493938f/ab-test/67be5cf926f95807b93b8686/player.js", s.async = !0, document.head.appendChild(s); </script>
-        </div>
+            <script type="text/javascript" id="scr_67c0e1d9db8fe57b24bf86bc"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/bf333ee3-159f-46c5-83ac-bddb1493938f/ab-test/67c0e1d9db8fe57b24bf86bc/player.js", s.async=!0,document.head.appendChild(s); </script>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <img src="../assets/certificado-ssl.png" alt="certificado SSL" class="footer-image" width="100"
+            <img src="assets/certificado-ssl.png" alt="certificado SSL" class="footer-image" width="100"
                 height="auto">
-            <img src="../assets/site-blindado-logo-6.png" alt="sitio blindado" class="footer-image">
+            <img src="assets/site-blindado-logo-6.png" alt="sitio blindado" class="footer-image">
         </div>
         <div class="footer-disclaimer">
             <p>Copyright 2025 / Dr. Hernandes - Todos los derechos reservados.</p>
